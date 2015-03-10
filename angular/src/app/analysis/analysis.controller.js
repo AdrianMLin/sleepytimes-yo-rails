@@ -20,7 +20,7 @@ angular.module('angular')
 
 'use strict'
 
-angular.module('sleepytimesFe')
+angular.module('angular')
 	//linechart stuff
 	.directive('linechart', function(){
 		return { 

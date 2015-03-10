@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('sleepytimesFe')
+angular.module('angular')
   .service('sleepisodes', function sleepisodes(){
     var self = this;
 

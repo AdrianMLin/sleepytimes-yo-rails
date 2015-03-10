@@ -24,7 +24,7 @@ angular.module('angular', ['ngResource', 'ui.router', 'ui.bootstrap'])
       .state('new-entry', {
       	url: '/new-entry',
       	templateUrl: 'app/entry/entry.html',
-      	controller: 'EntryController'
+      	controller: 'EntryController',
         controllerAs: 'enCtrl'
       });
 
