@@ -1,0 +1,39 @@
+<h1>New Entry</h1>
+
+<!-- <form action="sleepisode" method="POST"> -->
+	<!-- required fields -->
+    <label>Start
+      <input type="time" name="start_sleepiness" ng-model="neCtrl.newEntry.start_sleepiness" required />
+    </label><br />
+    <label>End
+      <input type="time" name="end_sleepiness" ng-model="neCtrl.newEntry.end_sleepiness" required />
+    </label><br />
+    <label>Hours slept last night
+      <input type="num" name="end_sleepiness" ng-model="neCtrl.newEntry.hours_slept_last_night" required />
+    </label><br />
+
+    <!-- need autocomplete or dropdown-->
+    <label>Location when becoming sleepy
+      <input type="text" name="location"  ng-model="neCtrl.newEntry.location" />
+    </label><br />
+    <label>Activity before becoming sleepy
+      <input type="text" name="reason_sleepiness"  ng-model="neCtrl.newEntry.reason_sleepiness" />
+    </label><br />
+    <label>Activity before becoming awake
+      <input type="text" name="reason_waking"  ng-model="neCtrl.newEntry.reason_waking" />
+    </label><br />
+
+    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+
+    <!-- submit button -->
+    <button ng-click="neCtrl.submitNewEntry()">Submit</button>
+<!-- </form> -->
+<br>
+
+<hr>
+<!-- list of sleepisode entries -->
+<div ng-repeat="entry in neCtrl.todaysEntries track by $index">
+  <entry entry-object="entry"></entry>
+</div>
+
+
