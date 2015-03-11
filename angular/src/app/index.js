@@ -13,7 +13,7 @@ angular.module('angular', ['ngResource', 'ui.router', 'ui.bootstrap'])
       	url: '/analysis',
       	templateUrl: 'app/analysis/analysis.html',
       	controller: 'AnalysisController',
-        controllerAs: 'anCtrl'
+        controllerAs: 'aCtrl'
       })
       .state('profile', {
       	url: '/profile',
@@ -23,9 +23,9 @@ angular.module('angular', ['ngResource', 'ui.router', 'ui.bootstrap'])
       })
       .state('new-entry', {
       	url: '/new-entry',
-      	templateUrl: 'app/entry/entry.html',
-      	controller: 'EntryController',
-        controllerAs: 'enCtrl'
+      	templateUrl: 'app/new-entry/new-entry.html',
+      	controller: 'NewEntryController',
+        controllerAs: 'neCtrl'
       });
 
     $urlRouterProvider.otherwise('/about');

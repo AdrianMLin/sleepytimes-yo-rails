@@ -1,0 +1,21 @@
+<%if session[:user_id]%>
+  <!-- Log out button -->
+  <form action="/session" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+    <button>Log out</button>
+  </form>
+<%else%>
+  <!-- Log in button -->
+  <form action="/login" method="post">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+    <button>Log in</button>
+  </form>
+<%end%>
+
+<!-- Sign up button -->
+<form action="/users/new">
+  <button>Sign up</button>
+</form>

@@ -1,0 +1,100 @@
+<!-- <h1>New sleepisode</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', sleepisodes_path %>
+ -->
+
+ <style>
+  header {
+    background-color: red;
+    height: 30%;
+  }
+  @media (max-device-width: 600px) {
+    body {
+      font-size: 1.5em;
+    }
+
+    header {
+      background-color: green;
+      width: 100%;
+      height: 5em;
+
+    }
+    header * {
+      float: left;
+      width: 100%;
+      text-align: center;
+    }
+
+    button {
+      width: 15%;
+      height: 10%;
+      display: inline-block;
+     }
+    #previous-button {
+      float: left;
+    }
+    #next-button {
+      float: right;
+    }
+
+
+    article form {
+      float: none !important;
+      display: block;
+    }
+  }
+
+</style>
+<main>
+
+  <!-- probably will make partial out of this -->
+  <header>
+    <button id="previous-button">&lt;</button>
+    <div><h1>Today</h1></div>
+    <button id="next-button">&gt;</button>
+  </header>
+
+  <br>
+
+  <article>
+    <section id="new-entry">
+      <!-- new entry -->
+      <form action="/sleepisode">
+
+        <!-- required fields -->
+        <label>Start
+          <input type="time" name="start_sleepiness" required />
+        </label><br>
+        <label>End
+          <input type="time" name="end_sleepiness" required />
+        </label><br>
+        <label>Hours slept last night
+          <input type="num" name="end_sleepiness" required/>
+        </label><br>
+
+        <!-- need autocomplete or dropdown-->
+        <label>Location when becoming sleepy
+          <input type="text" name="location" />
+        </label><br>
+        <label>Activity before becoming sleepy
+          <input type="text" name="reason_sleepiness" />
+        </label><br>
+        <label>Activity before becoming awake
+          <input type="text" name="reason_waking" />
+        </label><br>
+
+
+    
+        <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+      </form>
+    </section>
+
+    <section id="todays-entries">
+      
+    </section>
+
+  </article>
+
+</main>

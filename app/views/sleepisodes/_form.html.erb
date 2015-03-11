@@ -1,0 +1,17 @@
+<%= form_for(@sleepisode) do |f| %>
+  <% if @sleepisode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sleepisode.errors.count, "error") %> prohibited this sleepisode from being saved:</h2>
+
+      <ul>
+      <% @sleepisode.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
