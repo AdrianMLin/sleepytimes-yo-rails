@@ -74,6 +74,7 @@ angular.module('angular')
 
     //pushes it to service
     self.submitNewEntry = function(){
-      sleepisodes.dataArray.push( self.newEntry );  
+      sleepisodes.dataArray.push( self.newEntry ); 
+      // $http.post('/') 
     }
   });

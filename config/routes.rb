@@ -16,45 +16,26 @@ Rails.application.routes.draw do
 
   resources :sleepisodes
 
-  resources :users do
-    resources :sleepisodes, shallow: true
-  end
+  # resources :users do
+  #   resources :sleepisodes, shallow: true
+  # end
 
 
   root 'home#index'
 
-  post '/login' => 'session#create'
-  delete '/session' => 'session#destroy'
+  # post '/login' => 'session#create'
+  # delete '/session' => 'session#destroy'
 
-#                Prefix Verb   URI Pattern                               Controller#Action
-#         sleepisodes GET    /sleepisodes(.:format)                    sleepisodes#index
-#                     POST   /sleepisodes(.:format)                    sleepisodes#create
-#      new_sleepisode GET    /sleepisodes/new(.:format)                sleepisodes#new
-#     edit_sleepisode GET    /sleepisodes/:id/edit(.:format)           sleepisodes#edit
-#          sleepisode GET    /sleepisodes/:id(.:format)                sleepisodes#show
-#                     PATCH  /sleepisodes/:id(.:format)                sleepisodes#update
-#                     PUT    /sleepisodes/:id(.:format)                sleepisodes#update
-#                     DELETE /sleepisodes/:id(.:format)                sleepisodes#destroy
-#    user_sleepisodes GET    /users/:user_id/sleepisodes(.:format)     sleepisodes#index
-#                     POST   /users/:user_id/sleepisodes(.:format)     sleepisodes#create
-# new_user_sleepisode GET    /users/:user_id/sleepisodes/new(.:format) sleepisodes#new
-#                     GET    /sleepisodes/:id/edit(.:format)           sleepisodes#edit
-#                     GET    /sleepisodes/:id(.:format)                sleepisodes#show
-#                     PATCH  /sleepisodes/:id(.:format)                sleepisodes#update
-#                     PUT    /sleepisodes/:id(.:format)                sleepisodes#update
-#                     DELETE /sleepisodes/:id(.:format)                sleepisodes#destroy
-#               users GET    /users(.:format)                          users#index
-#                     POST   /users(.:format)                          users#create
-#            new_user GET    /users/new(.:format)                      users#new
-#           edit_user GET    /users/:id/edit(.:format)                 users#edit
-#                user GET    /users/:id(.:format)                      users#show
-#                     PATCH  /users/:id(.:format)                      users#update
-#                     PUT    /users/:id(.:format)                      users#update
-#                     DELETE /users/:id(.:format)                      users#destroy
-#                root GET    /                                         home#index
-#               login POST   /login(.:format)                          session#create
-#             session DELETE /session(.:format)                        session#destroy
-
+#          Prefix Verb   URI Pattern                     Controller#Action
+#     sleepisodes GET    /sleepisodes(.:format)          sleepisodes#index
+#                 POST   /sleepisodes(.:format)          sleepisodes#create
+#  new_sleepisode GET    /sleepisodes/new(.:format)      sleepisodes#new
+# edit_sleepisode GET    /sleepisodes/:id/edit(.:format) sleepisodes#edit
+#      sleepisode GET    /sleepisodes/:id(.:format)      sleepisodes#show
+#                 PATCH  /sleepisodes/:id(.:format)      sleepisodes#update
+#                 PUT    /sleepisodes/:id(.:format)      sleepisodes#update
+#                 DELETE /sleepisodes/:id(.:format)      sleepisodes#destroy
+#            root GET    / 
   # Example resource route with options:
   #   resources :products do
   #     member do
