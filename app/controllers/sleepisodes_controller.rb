@@ -24,7 +24,16 @@ class SleepisodesController < ApplicationController
   # POST /sleepisodes
   # POST /sleepisodes.json
   def create
-    @sleepisode = Sleepisode.new(sleepisode_params)
+    binding.pry
+    
+    new_sleepisode = Sleepisode.create({
+      start_sleepiness: params[:start_sleepiness],
+      end_sleepiness: params[:end_sleepiness],
+      location: params[:location],
+      reason_sleepiness: params[:reason_sleepiness],
+      reason_waking: params[:reason_waking],
+      hours_slept_last_night: params[:hours_slept_last_night]
+    })
 
     respond_to do |format|
       if @sleepisode.save

@@ -56,7 +56,7 @@ angular.module('angular')
 
 
   //New Entry Controller
-  .controller('NewEntryController', function(sleepisodes){
+  .controller('NewEntryController', function(sleepisodes, $http){
     var self = this;
 
     // takes data from service, will populate screen
@@ -71,10 +71,23 @@ angular.module('angular')
       'reason_sleepiness': '',
       'reason_waking': ''
     };
-
     //pushes it to service
     self.submitNewEntry = function(){
       sleepisodes.dataArray.push( self.newEntry ); 
-      // $http.post('/') 
+      $http(
+        {
+          method:'POST', 
+          url:'/sleepisodes', 
+          params: {
+            start_sleepiness: self.newEntry.start_sleepiness,
+            end_sleepiness: self.newEntry.end_sleepiness,
+            hours_slept_last_night: self.newEntry.hours_slept_last_night,
+            location: self.newEntry.location,
+            reason_sleepiness: self.newEntry.reason_sleepiness,
+            reason_waking: self.newEntry.reason_waking
+          }
+        })
+      ; 
+
     }
   });
